@@ -166,7 +166,7 @@ The official Abaqus Scripting User’s Guide is the primary reference. The follo
 particularly relevant:
 
 
-[Abaqus Scripting User’s Guide](https://docs.software.vt.edu/abaqusv2025/English/?show=SIMACAECMDRefMap%2Fsimacmd-c-ov.htm)
+[Abaqus Scripting User’s Guide](https://docs.software.vt.edu/abaqusv2025/English/)
 
 [Abaqus Scripting User’s Guide (pdf file)](http://abaqusdocs.eait.uq.edu.au/v6.11/pdf_books/SCRIPT_USER.pdf)
 
