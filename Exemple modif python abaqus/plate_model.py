@@ -20,16 +20,12 @@ for R in hole_radius:
     model=mdb.Model(name=model_name)
     s = model.ConstrainedSketch(name='__profile__', sheetSize=200.0)
 
-
-
     #2. Geometry 
     s.rectangle(point1=(0.0, 0.0), point2=(L, H))
     s.CircleByCenterPerimeter(center=(L/2, H/2), point1=(L/2+R, H/2))
     p = model.Part(name='Plate', dimensionality=TWO_D_PLANAR, 
         type=DEFORMABLE_BODY)
     p.BaseShell(sketch=s)
-
-
 
     #3. Material and section
     model.Material(name='Steel')
