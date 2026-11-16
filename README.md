@@ -25,8 +25,6 @@ abaqus cae -mesa
  
 ## Structure du script
  
-Chaque script suit les étapes classiques de modélisation Abaqus :
- 
 | Étape | Contenu |
 |---|---|
 | 0. Parameters | Paramètres géométriques, matériaux, chargement, maillage |
@@ -43,7 +41,7 @@ Chaque script suit les étapes classiques de modélisation Abaqus :
  
 ## Git
  
-Le travail est réparti sur **deux branches de développement**. Chacun développe sa partie de son côté, puis on fusionne dans `main` quand le code est validé.
+Chacun code sa partie de son côté, puis on fusionne dans `main` quand le code est validé.
  
 Intégration dans `main` :
  
@@ -51,6 +49,7 @@ Intégration dans `main` :
 2. Ouvrir une Pull Request sur GitHub (`branche -> main`).
 3. L'autre membre relit et valide.
 4. Merge dans `main`.
+
 Commandes de base :
  
 ```bash
@@ -84,8 +83,6 @@ abaqus help                               # aide générale
 ---
  
 ## Commandes Python utiles dans Abaqus
- 
-> Selon la version d'Abaqus, l'interpréteur est en Python 2.7 (`print "texte"`) ou en Python 3 (`print("texte")`). Vérifier avec `abaqus python -V` dans le terminal.
  
 ### Correspondance opération / commande
  
