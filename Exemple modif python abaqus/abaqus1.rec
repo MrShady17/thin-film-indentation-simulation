@@ -1,0 +1,44 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='PlateModel_R3_E210000_M4')
+mdb.models['PlateModel_R3_E210000_M4'].ConstrainedSketch(name='__profile__', 
+    sheetSize=200.0)
+mdb.models['PlateModel_R3_E210000_M4'].sketches['__profile__'].rectangle(
+    point1=(0.0, 0.0), point2=(100.0, 50.0))
+mdb.models['PlateModel_R3_E210000_M4'].sketches['__profile__'].CircleByCenterPerimeter(
+    center=(50.0, 25.0), point1=(53.0, 25.0))
+mdb.models['PlateModel_R3_E210000_M4'].Part(dimensionality=TWO_D_PLANAR, name=
+    'Plate', type=DEFORMABLE_BODY)
+mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].BaseShell(sketch=
+    mdb.models['PlateModel_R3_E210000_M4'].sketches['__profile__'])
+mdb.models['PlateModel_R3_E210000_M4'].Material(name='Steel')
+mdb.models['PlateModel_R3_E210000_M4'].materials['Steel'].Elastic(table=((
+    210000.0, 0.3), ))
+mdb.models['PlateModel_R3_E210000_M4'].HomogeneousSolidSection(material='Steel'
+    , name='PlateSection', thickness=None)
+mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].Set(faces=
+    mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].faces, name='Set-1')
+mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].SectionAssignment(offset=
+    0.0, offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].sets['Set-1'], 
+    sectionName='PlateSection', thicknessAssignment=FROM_SECTION)
+mdb.models['PlateModel_R3_E210000_M4'].rootAssembly.DatumCsysByDefault(
+    CARTESIAN)
+mdb.models['PlateModel_R3_E210000_M4'].rootAssembly.Instance(dependent=ON, 
+    name='PlateModel_R3_E210000_M4', part=
+    mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'])
+mdb.models['PlateModel_R3_E210000_M4'].StaticStep(name='Tension', previous=
+    'Initial')
+#* TypeError: arg1[0]; not all required arguments specified; expected 3, got 2

@@ -46,8 +46,8 @@ for R in hole_radius:
             model.StaticStep(name='Tension', previous='Initial')
 
             #6. BC
-            right=instance.edges.findAt(((L,H/2),))
-            left=instance.edges.findAt(((0.0,H/2),))
+            right=instance.edges.findAt(((L,H/2,0.0),))
+            left=instance.edges.findAt(((0.0,H/2,0.0),))
             a.Set(edges=right, name='RightEdge')
             a.Set(edges=left, name='LeftEdge')
             model.DisplacementBC(name='Traction', createStepName='Tension', region=a.sets['RightEdge'], u1=u0, u2=UNSET, ur3=UNSET, amplitude=UNSET, fixed=OFF, distributionType=UNIFORM, fieldName='', localCsys=None)
@@ -58,7 +58,7 @@ for R in hole_radius:
             p.setMeshControls(regions=p.faces, elemShape=QUAD)
             elemType1 = mesh.ElemType(elemCode=CPS4R, elemLibrary=STANDARD,secondOrderAccuracy=OFF, hourglassControl=DEFAULT,distortionControl=DEFAULT)
             p.setElementType(regions=(p.faces,), elemTypes=(elemType1,))
-            hole_face = p.faces.findAt(((L/2 + R, H/2),))
+            hole_face = p.faces.findAt(((L/2 + R, H/2,0.0),))
             p.seedEdgeBySize(edges=hole_face.getEdges(), size=M/2, deviationFactor=0.1, minSizeFactor=0.1)
             
             #Je ne sais pas lequel est bon, si le premier ne fonctionne pas, essayer le second

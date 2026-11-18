@@ -30,3 +30,29 @@ execfile(
 #* ('/net/etudiant/home/maenhaua/Documents/Calculs/Projet/Exemple/Code fini 
 #* /thin-film-indentation-simulation/Exemple modif python 
 #* abaqus/plate_model.py', 62, 0, None))
+execfile(
+    '/net/etudiant/home/maenhaua/Documents/Calculs/Projet/Exemple/Code fini /thin-film-indentation-simulation/Exemple modif python abaqus/plate_model.py', 
+    __main__.__dict__)
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+#: Creating model: PlateModel_R3_E210000_M4
+#: The model "PlateModel_R3_E210000_M4" has been created.
+#* TypeError: arg1[0]; not all required arguments specified; expected 3, got 2
+#* File "/net/etudiant/home/maenhaua/Documents/Calculs/Projet/Exemple/Code fini 
+#* /thin-film-indentation-simulation/Exemple modif python 
+#* abaqus/plate_model.py", line 49, in <module>
+#*     right=instance.edges.findAt(((L,H/2),))
+execfile(
+    '/net/etudiant/home/maenhaua/Documents/Calculs/Projet/Exemple/Code fini /thin-film-indentation-simulation/Exemple modif python abaqus/plate_model.py', 
+    __main__.__dict__)
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+#: Creating model: PlateModel_R3_E210000_M4
+#: The model "PlateModel_R3_E210000_M4" has been created.
+#* TypeError: arg1[0]; not all required arguments specified; expected 3, got 2
+#* File "/net/etudiant/home/maenhaua/Documents/Calculs/Projet/Exemple/Code fini 
+#* /thin-film-indentation-simulation/Exemple modif python 
+#* abaqus/plate_model.py", line 49, in <module>
+#*     right=instance.edges.findAt(((L,H/2),))
