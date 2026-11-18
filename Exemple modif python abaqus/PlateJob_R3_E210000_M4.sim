@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- COPYRIGHT DASSAULT SYSTEMES 2009 -->
+<manifest>
+    <focusFile fileBinary="PlateJob_R3_E210000_M4.simdir/PlateJob_R3_E210000_M4.1.SMAFocus"/>
+    <bulkFile bulkid="1" fileBinary="PlateJob_R3_E210000_M4.1.SMABulk"/>
+</manifest>

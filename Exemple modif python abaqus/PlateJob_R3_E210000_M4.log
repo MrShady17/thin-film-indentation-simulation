@@ -1,0 +1,15 @@
+Analysis initiated from SIMULIA established products
+Abaqus JOB PlateJob_R3_E210000_M4
+Abaqus 2020
+Abaqus License Manager checked out the following licenses:
+Abaqus/Standard checked out 5 tokens from Flexnet server v-licence3.minatec.grenoble-inp.fr.
+<155 out of 160 licenses remain available>.
+Abaqus Warning: Your Abaqus license will expire in 12 days.
+Begin Analysis Input File Processor
+Wed Nov 18 14:56:51 2026
+Run pre
+Wed Nov 18 14:56:54 2026
+End Analysis Input File Processor
+Begin Abaqus/Standard Analysis
+Wed Nov 18 14:56:54 2026
+Run standard

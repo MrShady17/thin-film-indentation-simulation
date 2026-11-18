@@ -66,3 +66,19 @@ mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].setElementType(elemTypes=
     (ElemType(elemCode=CPS4R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
     hourglassControl=DEFAULT, distortionControl=DEFAULT), ), regions=(
     mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].faces, ))
+mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].seedEdgeBySize(
+    deviationFactor=0.1, edges=
+    mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].edges.getSequenceFromMask(
+    mask=('[#1 ]', ), ), minSizeFactor=0.1, size=2.0)
+mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].generateMesh()
+mdb.models['PlateModel_R3_E210000_M4'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description=
+    'Plate with hole radius 3.0, Young modulus 210000.0 and mesh size 4.0', 
+    echoPrint=OFF, explicitPrecision=SINGLE, getMemoryFromAnalysis=True, 
+    historyPrint=OFF, memory=90, memoryUnits=PERCENTAGE, model=
+    'PlateModel_R3_E210000_M4', modelPrint=OFF, multiprocessingMode=DEFAULT, 
+    name='PlateJob_R3_E210000_M4', nodalOutputPrecision=SINGLE, numCpus=1, 
+    numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, 
+    userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['PlateJob_R3_E210000_M4'].submit()
+mdb.jobs['PlateJob_R3_E210000_M4'].waitForCompletion()

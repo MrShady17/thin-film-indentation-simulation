@@ -78,8 +78,8 @@ for R in hole_radius:
                 scratch='', resultsFormat=ODB, multiprocessingMode=DEFAULT, numCpus=1, 
                 numGPUs=0)
             # a decommenter pour lancer les jobs automatiquement, attention tester avant si il fonctionne
-            mdb.jobs['PlateJob_R' + str(int(R))+ '_E' + str(int(E))+ '_M' + str(int(M))].submit()
-            mdb.jobs['PlateJob_R' + str(int(R))+ '_E' + str(int(E))+ '_M' + str(int(M))].waitForCompletion()
+            #mdb.jobs['PlateJob_R' + str(int(R))+ '_E' + str(int(E))+ '_M' + str(int(M))].submit()
+            #mdb.jobs['PlateJob_R' + str(int(R))+ '_E' + str(int(E))+ '_M' + str(int(M))].waitForCompletion()
 
 #chemin absolu, a modifier selon le poste
 #mdb.saveAs(pathName='/net/etudiant/home/maenhaua/Documents/Calculs/Projet/PlateModel')

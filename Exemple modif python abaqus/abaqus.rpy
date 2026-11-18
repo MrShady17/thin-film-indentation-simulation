@@ -70,3 +70,13 @@ session.viewports['Viewport: 1'].setValues(displayedObject=None)
 #* abaqus/plate_model.py", line 62, in <module>
 #*     p.seedEdgeBySize(edges=hole_face.getEdges(), size=M/2, 
 #* deviationFactor=0.1, minSizeFactor=0.1)
+execfile(
+    '/net/etudiant/home/maenhaua/Documents/Calculs/Projet/Exemple/Code fini /thin-film-indentation-simulation/Exemple modif python abaqus/plate_model.py', 
+    __main__.__dict__)
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+#: Creating model: PlateModel_R3_E210000_M4
+#: The model "PlateModel_R3_E210000_M4" has been created.
+#: Job PlateJob_R3_E210000_M4: Analysis Input File Processor completed successfully.
+#: Job PlateJob_R3_E210000_M4: Abaqus/Standard completed successfully.
