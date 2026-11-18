@@ -59,7 +59,7 @@ for R in hole_radius:
             elemType1 = mesh.ElemType(elemCode=CPS4R, elemLibrary=STANDARD,secondOrderAccuracy=OFF, hourglassControl=DEFAULT,distortionControl=DEFAULT)
             p.setElementType(regions=(p.faces,), elemTypes=(elemType1,))
 
-            ## Local mesh refinement around the hole
+            # Local mesh refinement around the hole
             
             hole_face = p.faces.findAt(((L/2 + R, H/2),))
             p.seedEdgeBySize(edges=hole_face.getEdges(), size=M/2, deviationFactor=0.1, minSizeFactor=0.1)
@@ -81,8 +81,8 @@ for R in hole_radius:
                 scratch='', resultsFormat=ODB, multiprocessingMode=DEFAULT, numCpus=1, 
                 numGPUs=0)
             # a decommenter pour lancer les jobs automatiquement, attention tester avant si il fonctionne
-            #mdb.jobs['PlateJob_R' + str(int(R))+ '_E' + str(int(E))+ '_M' + str(int(M))].submit()
-            #mdb.jobs['PlateJob_R' + str(int(R))+ '_E' + str(int(E))+ '_M' + str(int(M))].waitForCompletion()
+            mdb.jobs['PlateJob_R' + str(int(R))+ '_E' + str(int(E))+ '_M' + str(int(M))].submit()
+            mdb.jobs['PlateJob_R' + str(int(R))+ '_E' + str(int(E))+ '_M' + str(int(M))].waitForCompletion()
 
 #chemin absolu, a modifier selon le poste
 #mdb.saveAs(pathName='/net/etudiant/home/maenhaua/Documents/Calculs/Projet/PlateModel')
