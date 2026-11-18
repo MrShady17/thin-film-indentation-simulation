@@ -62,7 +62,7 @@ for R in hole_radius:
             #p.seedEdgeBySize(edges=hole_face.getEdges(), size=M/2, deviationFactor=0.1, minSizeFactor=0.1)
             
             #Je ne sais pas lequel est bon, si le premier ne fonctionne pas, essayer le second
-            hole_edge = p.edges.findAt(((L/2, H/2 + R),))
+            hole_edge = p.edges.findAt(((L/2, H/2 + R,0.0),))
             p.seedEdgeBySize(edges=hole_edge, size=M/2, deviationFactor=0.1, minSizeFactor=0.1)
             
             p.generateMesh()
