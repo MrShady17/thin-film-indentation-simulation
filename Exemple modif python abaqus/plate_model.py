@@ -58,12 +58,12 @@ for R in hole_radius:
             p.setMeshControls(regions=p.faces, elemShape=QUAD)
             elemType1 = mesh.ElemType(elemCode=CPS4R, elemLibrary=STANDARD,secondOrderAccuracy=OFF, hourglassControl=DEFAULT,distortionControl=DEFAULT)
             p.setElementType(regions=(p.faces,), elemTypes=(elemType1,))
-            hole_face = p.faces.findAt(((L/2 + R, H/2,0.0),))
-            p.seedEdgeBySize(edges=hole_face.getEdges(), size=M/2, deviationFactor=0.1, minSizeFactor=0.1)
+            #hole_face = p.faces.findAt(((L/2 + R, H/2,0.0),))
+            #p.seedEdgeBySize(edges=hole_face.getEdges(), size=M/2, deviationFactor=0.1, minSizeFactor=0.1)
             
             #Je ne sais pas lequel est bon, si le premier ne fonctionne pas, essayer le second
-            #hole_edge = p.edges.findAt(((L/2, H/2 + R),))
-            #p.seedEdgeBySize(edges=hole_edge, size=M/2, deviationFactor=0.1, minSizeFactor=0.1)
+            hole_edge = p.edges.findAt(((L/2, H/2 + R),))
+            p.seedEdgeBySize(edges=hole_edge, size=M/2, deviationFactor=0.1, minSizeFactor=0.1)
             
             p.generateMesh()
             a.regenerate()

@@ -41,4 +41,28 @@ mdb.models['PlateModel_R3_E210000_M4'].rootAssembly.Instance(dependent=ON,
     mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'])
 mdb.models['PlateModel_R3_E210000_M4'].StaticStep(name='Tension', previous=
     'Initial')
-#* TypeError: arg1[0]; not all required arguments specified; expected 3, got 2
+mdb.models['PlateModel_R3_E210000_M4'].rootAssembly.Set(edges=
+    mdb.models['PlateModel_R3_E210000_M4'].rootAssembly.instances['PlateModel_R3_E210000_M4'].edges.getSequenceFromMask(
+    mask=('[#4 ]', ), ), name='RightEdge')
+mdb.models['PlateModel_R3_E210000_M4'].rootAssembly.Set(edges=
+    mdb.models['PlateModel_R3_E210000_M4'].rootAssembly.instances['PlateModel_R3_E210000_M4'].edges.getSequenceFromMask(
+    mask=('[#10 ]', ), ), name='LeftEdge')
+mdb.models['PlateModel_R3_E210000_M4'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Tension', distributionType=UNIFORM, fieldName='', fixed=OFF
+    , localCsys=None, name='Traction', region=
+    mdb.models['PlateModel_R3_E210000_M4'].rootAssembly.sets['RightEdge'], u1=
+    0.1, u2=UNSET, ur3=UNSET)
+mdb.models['PlateModel_R3_E210000_M4'].DisplacementBC(amplitude=UNSET, 
+    createStepName='Tension', distributionType=UNIFORM, fieldName='', fixed=OFF
+    , localCsys=None, name='Clamp', region=
+    mdb.models['PlateModel_R3_E210000_M4'].rootAssembly.sets['LeftEdge'], u1=
+    0.0, u2=0.0, ur3=UNSET)
+mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].seedPart(deviationFactor=
+    0.1, minSizeFactor=0.1, size=4.0)
+mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].setMeshControls(
+    elemShape=QUAD, regions=
+    mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].faces)
+mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].setElementType(elemTypes=
+    (ElemType(elemCode=CPS4R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    hourglassControl=DEFAULT, distortionControl=DEFAULT), ), regions=(
+    mdb.models['PlateModel_R3_E210000_M4'].parts['Plate'].faces, ))

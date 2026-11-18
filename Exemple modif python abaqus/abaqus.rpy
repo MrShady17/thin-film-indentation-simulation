@@ -56,3 +56,17 @@ session.viewports['Viewport: 1'].setValues(displayedObject=None)
 #* /thin-film-indentation-simulation/Exemple modif python 
 #* abaqus/plate_model.py", line 49, in <module>
 #*     right=instance.edges.findAt(((L,H/2),))
+execfile(
+    '/net/etudiant/home/maenhaua/Documents/Calculs/Projet/Exemple/Code fini /thin-film-indentation-simulation/Exemple modif python abaqus/plate_model.py', 
+    __main__.__dict__)
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+#: Creating model: PlateModel_R3_E210000_M4
+#: The model "PlateModel_R3_E210000_M4" has been created.
+#* AttributeError: 'GeomSequence' object has no attribute 'getEdges'
+#* File "/net/etudiant/home/maenhaua/Documents/Calculs/Projet/Exemple/Code fini 
+#* /thin-film-indentation-simulation/Exemple modif python 
+#* abaqus/plate_model.py", line 62, in <module>
+#*     p.seedEdgeBySize(edges=hole_face.getEdges(), size=M/2, 
+#* deviationFactor=0.1, minSizeFactor=0.1)
