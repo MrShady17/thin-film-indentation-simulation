@@ -1,0 +1,39 @@
+# --- Abaqus : modèles et résultats ---
+*.cae
+*.odb
+*.odb_f
+*.sim
+*.prt
+*.mdl
+*.stt
+*.res
+*.abq
+*.pac
+*.sel
+*.fil
+
+# --- Abaqus : fichiers de calcul ---
+*.inp
+*.sta
+*.msg
+*.dat
+*.com
+*.ipm
+*.023
+*.lck
+*.SMABulk
+*.SMAFocus
+*.SMAManifest
+*.SMARes
+
+# --- Abaqus : journaux de CAE ---
+*.jnl
+*.rec
+abaqus.rpy*
+abaqus_acis.log
+*.rpy
+*.rpy.*
+
+# --- Python ---
+*.pyc
+__pycache__/
